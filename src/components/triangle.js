@@ -49,7 +49,7 @@ class Triangle extends Component {
             <label className="ts-left"  style={{ "width": "35%", "display":"inline-block" }}>
               <span>Triangle side 1</span>
               
-              <input type="text" name="choiceTriangle1" onChange={this.onChange} value={this.state.choiceTriangle1} />
+              <input type="number" name="choiceTriangle1" onChange={this.onChange} value={this.state.choiceTriangle1} />
             </label>
             <label className="ts-left" style={{ "width": "35%", "display": "inline-block" }}>
               <span>Triangle side 2</span>
