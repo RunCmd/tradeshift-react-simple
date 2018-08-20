@@ -4,9 +4,9 @@ class Triangle extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      choiceTriangle1: '0',
-      choiceTriangle2: '0',
-      choiceTriangle3: '0',
+      choiceTriangle1: "",
+      choiceTriangle2: "",
+      choiceTriangle3: "",
       result: ''
     }
     this.onChange = this.onChange.bind(this);
@@ -15,7 +15,13 @@ class Triangle extends Component {
 
   onChange(e) {
     //Target value setState
-    this.setState({ [e.target.name]: e.target.value });
+    const val = e.target.value;
+    if (val.length <= 2 && /^(\s*|\d+)$/.test(val)) {
+      this.setState({
+        [e.target.name]: e.target.value 
+      });
+    }
+    this.setState({result:""});
   }
 
   onSubmit(e) {
@@ -42,7 +48,8 @@ class Triangle extends Component {
           <fieldset>
             <label className="ts-left"  style={{ "width": "35%", "display":"inline-block" }}>
               <span>Triangle side 1</span>
-              <input type="number" name="choiceTriangle1" onChange={this.onChange} value={this.state.choiceTriangle1} />
+              
+              <input type="text" name="choiceTriangle1" onChange={this.onChange} value={this.state.choiceTriangle1} />
             </label>
             <label className="ts-left" style={{ "width": "35%", "display": "inline-block" }}>
               <span>Triangle side 2</span>
@@ -60,10 +67,12 @@ class Triangle extends Component {
             "borderRight": this.state.choiceTriangle3 + "px solid transparent"
           }}></div>
           <h2 style={{"textAlign":"center"}}>{this.state.result}</h2>
-          <hr />          
+          <hr />
+          <div style={{"textAlign":"center"}}>          
           <button onClick={this.onSubmit} data-ts="Button" className="ts-primary">
             <span>Check type </span>
           </button>
+          </div>
         </form>
       </div>
     )
