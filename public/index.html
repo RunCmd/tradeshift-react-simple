@@ -39,5 +39,17 @@
     -->
 
     <script src="//d5wfroyti11sa.cloudfront.net/prod/client/ts-10.0.25.min.js"></script>
+    <script>
+	ts.ui.ready(function() {
+		// Move the root element into the Tradeshift UI Template:
+		var main = document.createElement('main');
+		var root = document.getElementById('root');
+		root.setAttribute('data-ts', 'MainContent');
+		main.setAttribute('data-ts', 'Main');
+		main.appendChild(root);
+		document.body.appendChild(main);
+	});
+
+</script>
   </body>
 </html>

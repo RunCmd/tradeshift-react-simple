@@ -9,6 +9,7 @@ class Triangle extends Component {
       choiceTriangle3: "",
       result: ''
     }
+    //Bind
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -44,18 +45,18 @@ class Triangle extends Component {
       <div>
           <p>Insert points to draw Triangle:</p>
 
-        <form data-ts="Form" style={{ "width": "50%", "margin": "auto" }} onSubmit={this.onSubmit}>
+        <form data-ts="Form" className="form-style" id="myform" onSubmit={this.onSubmit}>
           <fieldset>
-            <label className="ts-left"  style={{ "width": "35%", "display":"inline-block" }}>
+            <label className="ts-left label-style">
               <span>Triangle side 1</span>
               
               <input type="number" name="choiceTriangle1" onChange={this.onChange} value={this.state.choiceTriangle1} />
             </label>
-            <label className="ts-left" style={{ "width": "35%", "display": "inline-block" }}>
+            <label className="ts-left label-style">
               <span>Triangle side 2</span>
               <input type="number" name="choiceTriangle2" onChange={this.onChange} value={this.state.choiceTriangle2} />
             </label>
-            <label className="ts-left" style={{ "width": "30%", "display": "inline-block" }}>
+            <label className="ts-left label-style">
               <span>Triangle side 3</span>
               <input type="number" name="choiceTriangle3" onChange={this.onChange} value={this.state.choiceTriangle3} />
             </label>
